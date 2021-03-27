@@ -141,7 +141,6 @@ BOTの名前#BOTのタグ でログインしています。
 
 解説コーナー
 -
-//のあとの文を見てね
 
 ```js
 const Discord = require('discord.js')　
@@ -171,3 +170,21 @@ client.on('message', async msg => {
   もし、発言内容(msg.content)が、'!ping'なら
     発言があったチャンネル(msg.channel)に発言する('Pong!')`
 という意味です。
+```js
+client.login('TOKEN(見せちゃいけないやつ)')
+```
+これはBOTでログインするためのやつ。
+TOKENを変えれば、別のBOTが動く
+
+# 終わりに
+DiscordBOTって意外と簡単じゃね？
+コードとかのやーつは、index.jsとかのファイルを見てくれ
+おまけで、コード載せとくね！
+
+# 出典
+https://qiita.com/yuto0214w/items/1ecee25efca6b5b7445b
+https://qiita.com/cryptocoin_harumaki/items/5d8c503e02093eca1f9b
+https://discord.js.org/#/
+
+
+
