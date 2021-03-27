@@ -180,6 +180,7 @@ TOKENを変えれば、別のBOTが動く
 DiscordBOTって意外と簡単じゃね？
 コードとかのやーつは、index.jsとかのファイルを見てくれ
 おまけで、コード載せとくね！
+是非、starをつけてね♡
 
 # 出典
 https://qiita.com/yuto0214w/items/1ecee25efca6b5b7445b
