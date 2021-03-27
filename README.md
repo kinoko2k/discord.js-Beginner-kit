@@ -68,5 +68,72 @@ CLIENT ID はコピーして何かにメモをしてもいいですが、サー�
 ボットユーザーを追加すると、アプリがDiscordで目に見えるようになります。 
 ただし、このアクションは取り消せません。 賢明に選択してください。 
 ```
+押したあと
+-
+```
+A wild bot has appeared!
+```
+と出たら成功です。これでボットができます！
+でももし、
+```
+Too many users have this username, please try another.
+```
+と言われてしまった人は残念ながらその名前は使えないので、他の名前にする様にしましょう。
+その名前=test,botなど
 
+ではここに表示されている項目について簡単に説明します。
+-
+```
+    ICON = ボットのアイコン(初期・Discordのアイコン)
+    USERNAME = ボットの名前。タグも表示される。
+    TOKEN = トークン。ボットの中で一番大事なやつ。ネットに晒したり、他人に見せちゃいけないやつ
+    PUBLIC BOT = ON(右) ならそのBOTの CLIENT ID が分かってて、かつ権限(数字)を持っていればだれでもそのBOTをサーバーに招き入れることができます。
+    逆に OFF(左) にすれば自分しか追加できなくなります。
+    REQUIRES OAUTH2 CODE GRANT = OFF のままにしときましょう。
+```
+TOKEN(他人に見せちゃいけないやつ) も何かにメモしておきましょう。
+次です。サーバーに追加します。
+-
+さっきコピーした CLIENT ID を使います。
+サーバーに追加するときにはURLを使います。
+例
+```
+https://discord.com/api/oauth2/authorize?client_id=759267635707117588&permissions=8&scope=bot
+client_id=コピーしたIDを入れる                        ^^^^^^^^^^^^^^^^^^
+```
+みたいにしてURLに飛ぶと、Discordに接続 と書かれてるページに飛びます。
+「サーバーを選択」とあるので、ここでさっき作ったサーバー、又は入れてもらおうとしているサーバーを選びましょう。(BOTを入れるには権限が必要です。)
+
+サーバーを見て、BOTがいたら、成功です。(いない場合はうまくて行ってない場合があります、もう一度試してください。)(BOTはオフライン)
+
+# BOTのコードを書こう！
+VSCodeを開いて、新しいファイルを作成し、index.jsと名付けましょう(.jsは拡張子)
+そして、下記のコードを入れてください。
+```js
+
+
+const Discord = require('discord.js')
+const client = new Discord.Client()
+
+client.on('ready', () => {
+  console.log(`${client.user.tag} でログインしています。`)
+})
+
+client.on('message', async msg => {
+  if (msg.content === '!ping') {
+    msg.channel.send('Pong!')
+  }
+})
+
+client.login('TOKEN(見せちゃいけないやつ)')
+```
+取りあえずはこれでOK。最後のトークンにはさっきコピーした TOKEN を入れます。
+そしたらコンソール(ターミナル)に戻ってください。
+そこで `node index.js` と打ってみてください。
+```
+BOTの名前#BOTのタグ でログインしています。
+```
+の様に表示されて Discord を開くとボットがオンラインになっていたら、成功です！
+!ping と入力してみてください。
+するとBOTが「Pong!」と返してくれます！
 
