@@ -57,11 +57,11 @@ $ sudo apt install -y code
     CLIENT ID = ボットの ID(開発者モードをONにすると見れたり)
     CLIENT SECRET = シークレットなやつ、多分他人に見せちゃダメなやつ
 ```
-CLIENT ID はコピーして何かにメモをしてもいいですが、サーバーに行ってBOTを右クリックして、IDをコピーを押すと、同じIDが出てきます。
-では左側の SETTINGS を見てください。
-今は General Informationを選択しています。Bot をクリックします。
-すると画面は変わって真ん中に BUILD-A-BOT と表示されます。横の Add Bot をクリック。
-そしたらなんか出てくるので Yes, do it! を押しましょう。
+CLIENT ID はコピーして何かにメモをしてもいいですが、サーバーに行ってBOTを右クリックして、IDをコピーを押すと、同じIDが出てきます。\n
+では左側の SETTINGS を見てください。\n
+今は General Informationを選択しています。Bot をクリックします。\n
+すると画面は変わって真ん中に BUILD-A-BOT と表示されます。横の Add Bot をクリック。\n
+そしたらなんか出てくるので Yes, do it! を押しましょう。\n
 ```
 でてきたものの翻訳
 このアプリにボットを追加しますか？
