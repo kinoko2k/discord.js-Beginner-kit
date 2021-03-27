@@ -8,6 +8,7 @@ Beginner kit
 
 [ホームページ](https://nodejs.org/ja/)にアクセスして最新版をダウンロード & インストールします。
 
+そして、`npm install discord.js`をコマンドプロンプトで実行してください。
 ## 開発環境のインストール (Windows & Mac)
 [Visual Studio Code](https://code.visualstudio.com/)です。このページにアクセスして最新版をダウンロード & インストールします。
 
@@ -18,6 +19,7 @@ Beginner kit
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install nodejs
+npm install discord.js
 ```
 
 ## 開発環境のインストール (Ubuntu)
@@ -117,13 +119,13 @@ const client = new Discord.Client()
 
 client.on('ready', () => {
   console.log(`${client.user.tag} でログインしています。`)
-})
+});
 
 client.on('message', async msg => {
   if (msg.content === '!ping') {
     msg.channel.send('Pong!')
   }
-})
+});
 
 client.login('TOKEN(見せちゃいけないやつ)')
 ```
@@ -137,3 +139,35 @@ BOTの名前#BOTのタグ でログインしています。
 !ping と入力してみてください。
 するとBOTが「Pong!」と返してくれます！
 
+解説コーナー
+-
+//のあとの文を見てね
+
+```js
+const Discord = require('discord.js')　
+const client = new Discord.Client() 
+```
+ここでは定義をしています。さっき `npm install discord.js` で追加したやつですね。
+discord.js を Discord とする
+初期化した Client を client とする
+(難しすぎてよくわからへん)
+```js
+client.on('ready', () => {
+  console.log(`${client.user.tag} でログインしています。`)
+});
+```
+これは準備が出来たらコマンドプロンプト(ターミナル)に「～でログインしています。」と表示させる。
+JavaScript は console.log('メッセージ') がコマンドプロンプト(ターミナル)にメッセージを表示させる基本形です。
+エラーがどこで起きているかとかの確認によく使うので、(必ず)覚えておきましょう。
+});の;は文の最後という意味です。
+```js
+client.on('message', async msg => {
+  if (msg.content === '!ping') {
+    msg.channel.send('Pong!')
+  }
+});
+```
+`クライアントがメッセージを受信したら、msgとする。
+  もし、発言内容(msg.content)が、'!ping'なら
+    発言があったチャンネル(msg.channel)に発言する('Pong!')`
+という意味です。
